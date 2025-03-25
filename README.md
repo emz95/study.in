@@ -105,6 +105,7 @@ const YourPage = () => {
 ## Current Status
 - ✅ Basic routing structure is set up in App.jsx
 - ✅ All page components are created
+- ✅ Currently, to access the different pages, you have to type http://localhost:5173/search to get to the search page for example
 - ❌ Navigation between pages needs to be implemented
 - ❌ Layout component needs to be connected with navigation
 
