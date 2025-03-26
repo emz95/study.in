@@ -18,6 +18,10 @@ function App() {
         {/* This route shows GetStarted page at the root URL "/" */}
         <Route path="/" element={<GetStarted />} />
         
+         {/* No bottom nav for SignUp */}
+        <Route path="/signup" element={<SignUp />} />
+
+        
         {/* All these routes will use the Layout (header and bottom navigation) */}
         <Route element={<Layout />}>
           <Route path="/home" element={<Home />} />
