@@ -1,13 +1,19 @@
 import React from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import SignUpForm from '../components/SignUpForm';
+import { Link } from 'react-router-dom';
+
 
 
 const SignUp = () => {
   return (
     <div className="p-4" >
+      <h1 className="text-2xl font-bold">SignUp</h1>
+      <p>Create a free account</p>
       <SignUpForm></SignUpForm>
-      <h1 className="text-2xl font-bold">SignUp Page</h1>
+      <p>Already have an account?</p>
+      <Link to="/login">Login here</Link>
+
       
     </div>
   );
