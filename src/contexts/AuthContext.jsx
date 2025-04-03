@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useMemo } from 'react';
 import { auth } from '../firebase/firebase'; 
 import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 
@@ -31,12 +31,12 @@ export default function AuthProvider({ children }) {
     return unsubscribe;
   }, []);
 
-  const value = {
+  const value = useMemo(() => ({
     currentUser,
     login,
     signup,
-    getUID
-  };
+    getUID,
+  }), [currentUser, login, signup, getUID]);
 
   return (
     <AuthContext.Provider value={value}>

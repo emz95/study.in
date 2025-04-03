@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { useHistory } from "react-router-dom";
 
 
 
@@ -10,7 +10,7 @@ function SignUpForm() {
     const [error, setError] = useState("");
     const {signup} = useAuth();
     const [loading, setLoading] = useState(false);
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const getErrorMessage = (code) =>{
         switch (code) {
@@ -34,6 +34,8 @@ function SignUpForm() {
         setLoading(true)
         try{
             await signup(email, password);
+            navigate('/survey');
+
             //history.push('/') send to next page
         } catch (err){
             setError(getErrorMessage(err.code));

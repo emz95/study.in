@@ -1,5 +1,4 @@
 import React from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 import SignUpForm from '../components/SignUpForm';
 import { Link } from 'react-router-dom';
 
