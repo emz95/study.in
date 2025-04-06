@@ -11,6 +11,7 @@ import Review from './pages/Review';
 import SignUp from './pages/SignUp';
 import Preferences from './pages/Preferences';
 import Login from './pages/Login';
+import Profile from './pages/Profile'
 
 
 function App() {
@@ -37,6 +38,8 @@ function App() {
           <Route path="/explore" element={<Explore />} />
           <Route path="/review" element={<Review />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/profile" element={<Profile />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

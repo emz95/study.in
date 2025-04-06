@@ -1,8 +1,11 @@
-import { getAuth, signOut } from "firebase/auth";
+import { auth } from './firebase';
+import { signOut } from "firebase/auth";
 
-const auth = getAuth();
-signOut(auth).then(() => {
-  // Sign-out successful.
-}).catch((error) => {
-  // An error happened.
-});
+export async function signOutUser() {
+  try {
+    await signOut(auth);
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error.code };
+  }
+}
