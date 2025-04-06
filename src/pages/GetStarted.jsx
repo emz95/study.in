@@ -5,25 +5,35 @@ import { useNavigate } from 'react-router-dom'
 const GetStarted = () => { 
     const navigate = useNavigate();  // initialize navigation hook
 
-    // return the UI elements
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-2xl font-bold mb-4">
-            Get Started Page
-        </h1>
-        <button 
-            onClick={() => navigate('/home')}
-            className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
-            Get Started
-        </button>
-        <button 
-            onClick={() => navigate('/signup')}
-            className="bg-blue-500 text-white px-4 py-2 rounded" 
-            
-        >
-            Signup
-        </button>
+        // The main container that takes up the full screen height
+        <div className="h-screen w-full bg-white">
+            {/* Center everything vertically and horizontally */}
+            <div className="h-full flex flex-col items-center justify-between p-8">
+                {/* Title section */}
+                <div className="flex-grow flex items-center">
+                    <h1 className="text-4xl" style={{ color: '#333333' }}>
+                        study.in
+                    </h1>
+                </div>
+
+                {/* Button section */}
+                <div className="w-full max-w-sm mb-16">
+                    <button 
+                        onClick={() => navigate('/signup')}
+                        style={{
+                            backgroundColor: '#69A297',
+                            width: '100%',
+                            padding: '14px',
+                            borderRadius: '6px',
+                            color: 'white',
+                            border: 'none'
+                        }}
+                    >
+                        Get Started
+                    </button>
+                </div>
+            </div>
         </div>
     );
 };
