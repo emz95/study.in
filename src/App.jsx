@@ -11,13 +11,11 @@ import Review from './pages/Review';
 import SignUp from './pages/SignUp';
 import Preferences from './pages/Preferences';
 import Login from './pages/Login';
-import AuthProvider from './contexts/AuthContext';
 
 
 function App() {
   return (
     <BrowserRouter>
-    <AuthProvider>
 
     
       <Routes>
@@ -41,7 +39,6 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
         </Route>
       </Routes>
-      </AuthProvider>
     </BrowserRouter>
 
   );

@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
-import OnOffCampus from './OnOffCampus';
+import OnOffCampus from './onOffCampus';
 import Rank from './Rank';
 import { useNavigate } from 'react-router-dom';
-import { writeUserPreferences } from '../firebase/write_user_preferences';
-
+import { writeUserPreferences } from '../firebase/write_User_Preferences';
 
 export default function PreferencesForm() {
     const [studyLocation, setStudyLocation] = useState(""); 

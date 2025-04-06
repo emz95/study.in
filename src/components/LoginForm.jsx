@@ -1,25 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import TermsOfService from './TermsOfService'
-import { signUpWithEmail } from "../firebase/auth_signup_password";
+import { loginWithEmail } from "../firebase/auth_signin_password";
 
 
-
-function SignUpForm() {
+function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
-    const handleSignUp = async(e) =>{
+    const handleLogin = async(e) =>{
         e.preventDefault();
         setError("");
         setLoading(true);
-        const result = await signUpWithEmail(email, password);
+        const result = await loginWithEmail(email, password);
 
         if(result.success) {
-            navigate('/preferences');
+            navigate('/home');
         } else {
             setError(result.error);
         } 
@@ -29,7 +27,7 @@ function SignUpForm() {
 
 
     return (
-        <form onSubmit={handleSignUp}>
+        <form onSubmit={handleLogin}>
             <input 
                 type="email"
                 placeholder="Email"
@@ -49,7 +47,6 @@ function SignUpForm() {
 
             </input>
             <br/>
-            <TermsOfService></TermsOfService>
             <button 
                 disabled={loading}
                 type="submit">
@@ -62,4 +59,4 @@ function SignUpForm() {
 
 }
 
-export default SignUpForm;
+export default LoginForm;
