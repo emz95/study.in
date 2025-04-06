@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import TermsOfService from './TermsOfService'
 
 
 
@@ -34,7 +35,7 @@ function SignUpForm() {
         setLoading(true)
         try{
             await signup(email, password);
-            navigate('/survey');
+            navigate('/preferences');
 
             //history.push('/') send to next page
         } catch (err){
@@ -65,6 +66,7 @@ function SignUpForm() {
 
             </input>
             <br/>
+            <TermsOfService></TermsOfService>
             <button 
                 disabled={loading}
                 type="submit">

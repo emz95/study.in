@@ -1,6 +1,7 @@
 import React from 'react';
 import SignUpForm from '../components/SignUpForm';
 import { Link } from 'react-router-dom';
+import TermsOfService from '../components/TermsOfService';
 
 
 
@@ -12,7 +13,6 @@ const SignUp = () => {
       <SignUpForm></SignUpForm>
       <p>Already have an account?</p>
       <Link to="/login">Login here</Link>
-
       
     </div>
   );
