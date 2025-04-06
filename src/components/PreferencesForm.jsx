@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import OnOffCampus from './OnOffCampus';
 import Rank from './Rank';
 import { useNavigate } from 'react-router-dom';
+import { writeUserPreferences } from '../firebase/write_user_preferences';
+
 
 export default function PreferencesForm() {
     const [studyLocation, setStudyLocation] = useState(""); 
@@ -14,11 +16,20 @@ export default function PreferencesForm() {
     ]);
     const navigate = useNavigate();
 
-    const handleSubmit = async() => {
-        try{
-            //geting rank const rankOfWifi = items.indexOf("Reliable Wifi") + 1;
+    const data = {
+      onCampus: studyLocation === "on-campus",
+      wifi: preferences.indexOf("Reliable Wifi") + 1,
+      seating: preferences.indexOf("Abundant Seating") + 1,
+      outlet: preferences.indexOf("Outlets Available") + 1,
+      ambience: preferences.indexOf("Ambience") + 1,
+      crowd: preferences.indexOf("Minimal Crowdedness") + 1
+    };
 
-            //navigate('/home')
+    const handleSubmit = async() => {
+        
+        try{
+            await writeUserPreferences(data)
+            navigate('/home')
         } catch (err){
 
         }
@@ -33,6 +44,7 @@ export default function PreferencesForm() {
         <Rank items={preferences} setItems={setPreferences} />
         <button
             onClick={handleSubmit}
+            disabled={!studyLocation}
             >Continue</button>
 
     </div>
