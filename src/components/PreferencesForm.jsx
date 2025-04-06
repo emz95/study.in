@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import OnOffCampus from './onOffCampus';
+import OnOffCampus from './OnOffCampus';
 import Rank from './Rank';
 import { useNavigate } from 'react-router-dom';
 import { writeUserPreferences } from '../firebase/write_User_Preferences';
