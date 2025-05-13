@@ -1,0 +1,17 @@
+.survey-wrapper {
+    display: flex;
+    justify-content: center;    /* center horizontally */
+    align-items: center;        /* center vertically */
+    min-height: 100vh;          /* full viewport height */
+    background-color: white;
+  }
+  
+  .survey-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: left;
+  }

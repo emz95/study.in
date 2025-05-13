@@ -1,0 +1,16 @@
+.home-wrapper {
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: center;       /* vertical center */
+    min-height: 100vh;         /* full screen height */
+    background-color: white;
+  }
+  
+  .home-content {
+    display: flex;
+    flex-direction: column;    /* vertical stack */
+    width: 100%;
+    max-width: 800px;
+    padding: 24px;
+    box-sizing: border-box;
+  }

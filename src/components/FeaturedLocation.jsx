@@ -10,8 +10,8 @@ const FeaturedLocation = ({ name, rating, reviews, imageUrl }) => {
             <div className="relative">
                 <img 
                     src={imageUrl} 
-                    alt={name}
-                    className="w-full h-40 object-cover"
+                    alt={name} 
+                    style={{ width: '600px', height: '400px', objectFit: 'cover' }} 
                 />
                 <button 
                     onClick={(e) => {

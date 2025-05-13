@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'
+import './GetStarted.css'
 
 // declaring a fucntion (same as function GetStarted() {...})
 const GetStarted = () => { 
@@ -7,18 +8,18 @@ const GetStarted = () => {
 
     return (
         // The main container that takes up the full screen height
-        <div className="h-screen w-full bg-white">
+        <div className="get-started-container">
             {/* Center everything vertically and horizontally */}
-            <div className="h-full flex flex-col items-center justify-between p-8">
+            <div div style={{ textAlign: 'center' }}>
                 {/* Title section */}
-                <div className="flex-grow flex items-center">
-                    <h1 className="text-4xl" style={{ color: '#333333' }}>
+                <div >
+                    <h1 style={{ color: '#333333' }}>
                         study.in
                     </h1>
                 </div>
 
                 {/* Button section */}
-                <div className="w-full max-w-sm mb-16">
+                <div style={{ maxWidth: '300px', margin: '0 auto' }}>
                     <button 
                         onClick={() => navigate('/signup')}
                         style={{

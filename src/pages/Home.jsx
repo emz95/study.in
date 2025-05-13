@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import LocationCard from '../components/LocationCard';
 import FeaturedLocation from '../components/FeaturedLocation';
+import './Home.css'
 
 const Home = () => {
     const [activeCategory, setActiveCategory] = useState('On Campus');
@@ -15,25 +16,25 @@ const Home = () => {
         name: 'Charles E. Young Research Library',
         rating: 4.6,
         reviews: 50,
-        imageUrl: 'https://placehold.co/600x300',
+        imageUrl: "/yrl pic.jpg",
     };
 
     const locations = [
         {
             id: 1,
-            name: 'Din Tai Fung',
+            name: 'Upside Down',
             rating: 4.8,
             reviews: 127,
             waitTime: '23 min',
-            imageUrl: 'https://placehold.co/600x400',
+            imageUrl: '/upside down.webp',
         },
         {
             id: 2,
-            name: 'Din Tai Fung',
+            name: 'The Study',
             rating: 4.6,
             reviews: 89,
             waitTime: '23 min',
-            imageUrl: 'https://placehold.co/600x400',
+            imageUrl: '/study.jpg',
         },
         // Add more placeholder locations as needed
     ];
@@ -45,7 +46,10 @@ const Home = () => {
     };
 
     return (
-        <div className="flex flex-col bg-white min-h-screen p-6">
+        <div className="home-wrapper">
+            <div className='home-content'>
+
+            
             {/* Header */}
             <h1 className="text-2xl text-gray-800 mb-4">study.in</h1>
 
@@ -96,6 +100,7 @@ const Home = () => {
                     ))}
                 </div>
             </section>
+            </div>
         </div>
     );
 };

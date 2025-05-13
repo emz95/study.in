@@ -10,8 +10,9 @@ const LocationCard = ({ name, rating, reviews, waitTime, imageUrl }) => {
             <div className="relative">
                 <img 
                     src={imageUrl} 
-                    alt={name}
-                    className="w-full h-24 object-cover"
+                    alt={name} 
+                    style={{ width: '600px', height: '400px', objectFit: 'cover' }}
+
                 />
                 <button 
                     onClick={(e) => {
